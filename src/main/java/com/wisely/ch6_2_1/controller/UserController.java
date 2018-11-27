@@ -12,6 +12,7 @@ import com.wisely.ch6_2_1.Person;
 @Controller
 public class UserController {
 
+	@RequestMapping("/")
 	public String index(Model model) {
 		Person single = new Person("aa", 11);
 		List<Person> people = new ArrayList<Person>();
@@ -25,36 +26,5 @@ public class UserController {
 		model.addAttribute("people", people);
 		return "index";
 	}
-    
-    /**
-     * Ê×Ò³
-     * @return
-     */
-    @RequestMapping("/")
-    public String page(){
-        return "system/index";
-    }
- 
- 
-    /**
-     * Ìø×ª
-     * @return
-     */
-    @RequestMapping("/redirect")
-    public String page2(){
-        return "redirect/redirect";
-    }
- 
- 
-    /**
-     *ÊÓÍ¼
-     * @param model
-     * @return
-     */
-    @RequestMapping("/model")
-    public String page3(Model model){
-        model.addAttribute("name","seawater");
-        return "hello";
-    }
 
 }
